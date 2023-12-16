@@ -1,0 +1,69 @@
+<!-- --------------------- -->
+<!--       Controls        -->
+<!-- --------------------- -->
+<form class="nthControls">
+  <span>.fruit</span>
+  <select
+    name="nth-selector"
+    class="nthControls__select"
+    id="nth-selector"
+  >
+    <option value=""></option>
+    <option value="nth-child" selected>:nth-child</option>
+  </select>
+  <span>(</span>
+  <select
+    name="nth-count"
+    class="nthControls__select"
+    id="nth-count"
+  >
+    <option value=""></option>
+    <option value="even" selected>even</option>
+    <option value="odd">odd</option>
+    <option value="2n">2n</option>
+    <option value="2n+1">2n+1</option>
+    <option value="3n">3n</option>
+    <option value="3n+1">3n+1</option>
+    <option value="3n+2">3n+2</option>
+  </select>
+  <span> of </span>
+  <select
+    name="nth-of"
+    class="nthControls__select"
+    id="nth-of"
+  >
+    <option value=""></option>
+    <option value="*">*</option>
+    <option value=".cherry">.cherry</option>
+    <option value=".lemon" selected>.lemon</option>
+  </select>
+  <span>)</span>
+  <span>{ }</span>
+</form>
+
+<!-- --------------------- -->
+<!--        Fruits         -->
+<!-- --------------------- -->
+<div class="fruits">
+  <div class="fruit cherry">🍒</div>
+  <div class="fruit cherry">🍒</div>
+  <div class="fruit lemon">🍋</div>
+  <div class="fruit cherry">🍒</div>
+  <div class="fruit lemon">🍋</div>
+  <div class="fruit cherry">🍒</div>
+  <div class="fruit cherry">🍒</div>
+  <div class="fruit lemon">🍋</div>
+  <div class="fruit cherry">🍒</div>
+  <div class="fruit lemon">🍋</div>
+  <div class="fruit lemon">🍋</div>
+  <div class="fruit lemon">🍋</div>
+</div>
+
+<!-- --------------------- -->
+<!--        Output         -->
+<!-- --------------------- -->
+<style id="output">
+  .fruit:nth-child(even of .lemon) {
+    border: 5px solid #f700ff;
+  }
+</style>

@@ -1,0 +1,81 @@
+:root {
+  --background-color: #212130;
+  --select-background-color: #161622;
+  --select-color-first: #ffe100;
+  --select-color-second: #09cdff;
+  --select-color-last: #ff41ac;
+  --fruit-background: #303043;
+  --white: #fff;
+}
+
+.nthControls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 1em;
+  gap: 8px;
+  font-family: monospace;
+  background-color: var(--background-color);
+  font-size: 1.8rem;
+}
+
+.nthControls__select {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem;
+  background-color: var(--select-background-color);
+  color: var(--white);
+
+  &:first-of-type {
+    color: var(--select-color-first);
+  }
+
+  &:nth-of-type(2) {
+    color: var(--select-color-second);
+  }
+
+  &:last-of-type {
+    color: var(--select-color-last);
+  }
+}
+
+.fruits {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(180px, 1fr)
+  );
+  gap: 5px;
+  user-select: none;
+  padding: 1rem;
+
+  .fruit {
+    counter-increment: dolls;
+    width: 180px;
+    margin: 0 auto;
+    position: relative;
+    background: var(--fruit-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    font-size: 5rem;
+    text-align: center;
+    border-radius: 5px;
+    border: 5px solid transparent;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      content: counter(dolls);
+      font-size: 1.2rem;
+      color: var(--white);
+      line-height: 1;
+      padding: 0.3rem;
+      text-align: center;
+      border-radius: 0 0 5px;
+    }
+  }
+}
